@@ -1,6 +1,15 @@
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Hello world!");
+        Cat murzik = new Cat();
+        murzik.name = "Мурзик";
+        murzik.age = 3;
+        murzik.meow();
+
+        Cat begemot = new Cat();
+        begemot.name = "Бегемот";
+        begemot.age = 1;
+        begemot.meow();
+
     }
 }
