@@ -15,16 +15,16 @@ public class Human {
         this.town = town;
         this.jobTitle = jobTitle;
 
-        if (name == null || name == "") {
+        if (name == null || name.isEmpty()) {
             this.name = "Информация не указана";
         }
         if (yearOfBirth < 0) {
             this.yearOfBirth = 0;
         }
-        if (town == null || town == "") {
+        if (town == null || town.isEmpty()) {
             this.town = "Информация не указана";
         }
-        if (jobTitle == null || jobTitle == "") {
+        if (jobTitle == null || jobTitle.isEmpty()) {
             this.jobTitle = "Информация не указана";
         }
 

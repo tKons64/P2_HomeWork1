@@ -20,13 +20,13 @@ public class Car {
         this.engineVolume = engineVolume;
 
         //Если передана пустая строка или null в поля модель, марка машины и страна сборки, то значение по умолчанию — default
-        if (brand == null || brand == "") {
+        if (parameterIsNotCorrect(brand)) {
             this.brand = "default";
         }
-        if (model == null || model == "") {
+        if (parameterIsNotCorrect(model)) {
             this.model = "default";
         }
-        if (productionCountry == null || productionCountry == "") {
+        if (parameterIsNotCorrect(productionCountry)) {
             this.productionCountry = "default";
         }
         //Если переданный объем двигателя ≤=0, то значение по умолчанию — 1,5 л.
@@ -34,13 +34,17 @@ public class Car {
             this.engineVolume = 1.5f;
         }
         //Если передана пустая строка или null, то цвет кузова по умолчанию — белый.
-        if (color == null || color == "") {
+        if (parameterIsNotCorrect(color)) {
             this.color = "белый";
         }
         //Если год производства ≤0, то значение по умолчанию — 2000.
         if (productionYear <= 0) {
             this.productionYear = 2000;
         }
+    }
+
+    boolean parameterIsNotCorrect(String parametr) {
+        return (parametr == null || parametr.isEmpty());
     }
 
     @Override
