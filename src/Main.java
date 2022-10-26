@@ -6,9 +6,9 @@ public class Main {
 
         arrHumans = new Human[4];
 
-            Human maksim = new Human("Максим");
-            maksim.yearOfBirth = 1988;
-            maksim.town = "Минск";
+        Human maksim = new Human("Максим");
+        maksim.yearOfBirth = 1988;
+        maksim.town = "Минск";
 
         Human any = new Human("Аня");
         any.yearOfBirth = 1993;
@@ -27,24 +27,24 @@ public class Main {
         arrHumans[2] = katy;
         arrHumans[3] = artem;
 
-        task1();
-        task2();
-        task3();
+        task1_1();
+        task1_2();
+        task1_3();
+        task2_1();
     }
 
-    public static void task1() {
+    public static void task1_1() {
         System.out.println();
-        System.out.println("Задание №1");
+        System.out.println("Задание №1.1");
 
         for (int i = 0; i < arrHumans.length; i++) {
             System.out.println(arrHumans[i].toStringTask1());
         }
-
     }
 
-    public static void task2() {
+    public static void task1_2() {
         System.out.println();
-        System.out.println("Задание №2");
+        System.out.println("Задание №1.2");
 
         Human maksim = arrHumans[0];
         Human any = arrHumans[1];
@@ -63,9 +63,9 @@ public class Main {
 
     }
 
-    public static void task3() {
+    public static void task1_3() {
         System.out.println();
-        System.out.println("Задание №3");
+        System.out.println("Задание №1.3");
 
         Car lada = new Car("Lada");
         lada.model = "Granta";
@@ -108,6 +108,21 @@ public class Main {
         System.out.println(kia.toString());
         System.out.println(hyundai.toString());
 
+    }
+
+    public static void task2_1() {
+        System.out.println();
+        System.out.println("Задание №2.1");
+
+        Human maksim = new Human("Максим", 1988, "Минск", "бренд-менеджер");
+        Human any = new Human("Аня", 1993, "Москва", "методист образовательных программ");
+        Human katy = new Human("Катя", 1992, "Калининград", "продакт-менеджером");
+        Human artem = new Human("Артем", 1995, "Москва", "директор по развитию бизнеса");
+
+        System.out.println(maksim.toStringTask2());
+        System.out.println(any.toStringTask2());
+        System.out.println(katy.toStringTask2());
+        System.out.println(artem.toStringTask2());
     }
 
 }

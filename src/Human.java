@@ -9,6 +9,13 @@ public class Human {
         this.name = name;
     }
 
+    Human(String name, long yearOfBirth, String town, String jobTitle) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.town = town;
+        this.jobTitle = jobTitle;
+    }
+
     public String toStringTask1() {
         return "Привет! Меня зовут " + name + ". " +
                 "Я из города " + town + ". " +
