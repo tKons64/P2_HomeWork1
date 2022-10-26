@@ -32,6 +32,8 @@ public class Main {
         task1_3();
         task2_1();
         task2_2();
+        task3_1();
+        task3_2();
     }
 
     public static void task1_1() {
@@ -144,4 +146,21 @@ public class Main {
 
     }
 
+    public static void task3_1() {
+        System.out.println();
+        System.out.println("Задание №3.1");
+
+        Human maksim = new Human("Максим", -1988, "", null);
+        System.out.println(maksim.toStringTask2());
+
+    }
+
+    public static void task3_2() {
+        System.out.println();
+        System.out.println("Задание №3.2");
+
+        Car lada = new Car("Lada", null, 0, "", "", 0);
+
+        System.out.println(lada.toString());
+    }
 }

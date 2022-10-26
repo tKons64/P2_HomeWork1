@@ -14,6 +14,20 @@ public class Human {
         this.yearOfBirth = yearOfBirth;
         this.town = town;
         this.jobTitle = jobTitle;
+
+        if (name == null || name == "") {
+            this.name = "Информация не указана";
+        }
+        if (yearOfBirth < 0) {
+            this.yearOfBirth = 0;
+        }
+        if (town == null || town == "") {
+            this.town = "Информация не указана";
+        }
+        if (jobTitle == null || jobTitle == "") {
+            this.jobTitle = "Информация не указана";
+        }
+
     }
 
     public String toStringTask1() {
@@ -30,4 +44,5 @@ public class Human {
                 "Я работаю на должности " + jobTitle + ". " +
                 "Будем знакомы!";
     }
+
 }
