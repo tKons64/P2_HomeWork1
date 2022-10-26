@@ -31,6 +31,7 @@ public class Main {
         task1_2();
         task1_3();
         task2_1();
+        task2_2();
     }
 
     public static void task1_1() {
@@ -123,6 +124,24 @@ public class Main {
         System.out.println(any.toStringTask2());
         System.out.println(katy.toStringTask2());
         System.out.println(artem.toStringTask2());
+    }
+
+    public static void task2_2() {
+        System.out.println();
+        System.out.println("Задание №2.2");
+
+        Car lada = new Car("Lada", "Granta", 2015, "Россия", "черный", 1.7f);
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 2020, "Германия", "черный", 3.0f);
+        Car bmw = new Car("BMW", "Z8", 2021, "Германия", "черный", 3.0f);
+        Car kia = new Car("Kia", "Sportage 4-го поколения", 2018, "Южная Корея", "красный", 2.4f);
+        Car hyundai  = new Car("Hyundai", "Avante", 2016, "Южная Корея", "оранжевый", 1.6f);
+
+        System.out.println(lada.toString());
+        System.out.println(audi.toString());
+        System.out.println(bmw.toString());
+        System.out.println(kia.toString());
+        System.out.println(hyundai.toString());
+
     }
 
 }
