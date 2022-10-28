@@ -7,33 +7,37 @@ public class Main {
         arrHumans = new Human[4];
 
         Human maksim = new Human("Максим");
-        maksim.yearOfBirth = 1988;
-        maksim.town = "Минск";
+        maksim.setYearOfBirth(1988);
+        maksim.setTown("Минск");
 
         Human any = new Human("Аня");
-        any.yearOfBirth = 1993;
-        any.town = "Москва";
+        any.setYearOfBirth(1993);
+        any.setTown("Москва");
 
         Human katy = new Human("Катя");
-        katy.yearOfBirth = 1992;
-        katy.town = "Калининград";
+        katy.setYearOfBirth(1992);
+        katy.setTown("Калининград");
 
         Human artem = new Human("Артем");
-        artem.yearOfBirth = 1995;
-        artem.town = "Москва";
+        artem.setYearOfBirth(1995);
+        artem.setTown("Москва");
 
         arrHumans[0] = maksim;
         arrHumans[1] = any;
         arrHumans[2] = katy;
         arrHumans[3] = artem;
 
-        task1_1();
-        task1_2();
-        task1_3();
-        task2_1();
-        task2_2();
-        task3_1();
-        task3_2();
+        //task1_1();
+        //task1_2();
+        //task1_3();
+        //task2_1();
+        //task2_2();
+        //task3_1();
+        //task3_2();
+
+        task4_1();
+        task4_2();
+        task4_2add();
     }
 
     public static void task1_1() {
@@ -163,4 +167,75 @@ public class Main {
 
         System.out.println(lada.toString());
     }
+
+    public static void task4_1() {
+        System.out.println();
+        System.out.println("Задание №4.1");
+
+        Human vladimir = new Human("Владимир", "Казань", "", (byte) 21);
+
+        System.out.println(vladimir.toStringTask2());
+    }
+
+    public static void task4_2() {
+        System.out.println();
+        System.out.println("Задание №4.2");
+
+        Flower rose = new Flower("Роза обыкновенная", null , "Голландия", 35.59f, 0);
+        Flower сhrysanthemum = new Flower("Хризантема", null , "", 15f, 5);
+        Flower pion = new Flower("Пион", null , "Англия", 69.9f, 1);
+        Flower gypsophila = new Flower("Гипсофила", null , "Турция", 19.5f, 10);
+
+        System.out.println(rose.toString());
+        System.out.println(сhrysanthemum.toString());
+        System.out.println(pion.toString());
+        System.out.println(gypsophila.toString());
+    }
+
+    public static void task4_2add() {
+        System.out.println();
+        System.out.println("Задание №4.2 доп. задание");
+
+        Flower rose = new Flower("Роза обыкновенная", null , "Голландия", 35.59f, 0);
+        Flower сhrysanthemum = new Flower("Хризантема", null , "", 15f, 5);
+        Flower gypsophila = new Flower("Гипсофила", null , "Турция", 19.5f, 10);
+
+
+        Flower[] arrFlowers = new Flower[3];
+        long[] arrPieces = new long[3];
+        arrFlowers[0] = rose;
+        arrPieces[0] = 5;
+        arrFlowers[1] = сhrysanthemum;
+        arrPieces[1] = 11;
+        arrFlowers[2] = gypsophila;
+        arrPieces[2] = 3;
+
+        calculateBouquet(arrFlowers, arrPieces);
+
+    }
+
+    public static void calculateBouquet(Flower[] arrFlowers, long[] arrPieces){
+        float bouquetCost = 0f;
+        long bouquetlifeSpan = 0;
+        String outputMessage = "";
+
+        if (arrFlowers.length != arrPieces.length){
+            System.out.println("Данные заполненны не верно, рассчитать букет не возможно!");
+            return;
+        }
+
+        for (int i = 0; i < arrFlowers.length; i++) {
+            bouquetCost = bouquetCost + (arrFlowers[i].getCost() * arrPieces[i]);
+            if (i == 0) {
+                bouquetlifeSpan = arrFlowers[i].getLifeSpan();
+            } else if (bouquetlifeSpan > arrFlowers[i].getLifeSpan()) {
+                bouquetlifeSpan = arrFlowers[i].getLifeSpan();
+            }
+            outputMessage = outputMessage + arrFlowers[i].getTitle() + " - " + arrPieces[i] + " шт., ";
+        }
+
+        System.out.println("Букет: " + outputMessage + "общая стоимость - " + bouquetCost + ", срок стояния - " + bouquetlifeSpan + " дней");
+
+    }
+
 }

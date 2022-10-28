@@ -1,8 +1,10 @@
+import java.time.LocalDate;
+
 public class Human {
 
-    long yearOfBirth;
+    private long yearOfBirth;
     private String name;
-    String town;
+    private String town;
     String jobTitle;
 
     Human(String name) {
@@ -11,23 +13,54 @@ public class Human {
 
     Human(String name, long yearOfBirth, String town, String jobTitle) {
         this.name = name;
-        this.yearOfBirth = yearOfBirth;
-        this.town = town;
+        setYearOfBirth(yearOfBirth);
+        setTown(town);
         this.jobTitle = jobTitle;
 
         if (name == null || name.isEmpty()) {
             this.name = "Информация не указана";
         }
-        if (yearOfBirth < 0) {
-            this.yearOfBirth = 0;
+        if (jobTitle == null || jobTitle.isEmpty()) {
+            this.jobTitle = "Информация не указана";
         }
-        if (town == null || town.isEmpty()) {
-            this.town = "Информация не указана";
+    }
+
+    Human(String name, String town, String jobTitl, byte age) {
+        this.name = name;
+        setYearOfBirth(LocalDate.now().getYear()-age);
+        setTown(town);
+        this.jobTitle = jobTitle;
+
+        if (name == null || name.isEmpty()) {
+            this.name = "Информация не указана";
         }
         if (jobTitle == null || jobTitle.isEmpty()) {
             this.jobTitle = "Информация не указана";
         }
+    }
 
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        if (town == null || town.isEmpty() || town.isBlank()) {
+            this.town = "Информация не указана";
+        } else {
+            this.town = town;
+        }
+    }
+
+    public long getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public void setYearOfBirth(long yearOfBirth) {
+        if (yearOfBirth < 0) {
+            this.yearOfBirth = 0;
+        }else {
+            this.yearOfBirth = yearOfBirth;
+        }
     }
 
     public String toStringTask1() {
