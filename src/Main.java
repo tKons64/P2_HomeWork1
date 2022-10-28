@@ -234,7 +234,7 @@ public class Main {
             outputMessage = outputMessage + arrFlowers[i].getTitle() + " - " + arrPieces[i] + " шт., ";
         }
 
-        System.out.println("Букет: " + outputMessage + "общая стоимость - " + bouquetCost + ", срок стояния - " + bouquetlifeSpan + " дней");
+        System.out.println("Букет: " + outputMessage + "общая стоимость - " + bouquetCost + " руб., срок стояния - " + bouquetlifeSpan + " дней");
 
     }
 
