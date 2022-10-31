@@ -1,3 +1,5 @@
+import transport.Car;
+
 public class Main {
 
     static Human[] arrHumans;
@@ -35,9 +37,11 @@ public class Main {
         //task3_1();
         //task3_2();
 
-        task4_1();
-        task4_2();
-        task4_2add();
+        //task4_1();
+        //task4_2();
+        //task4_2add();
+
+        task4_3();
     }
 
     public static void task1_1() {
@@ -74,47 +78,17 @@ public class Main {
         System.out.println();
         System.out.println("Задание №1.3");
 
-        Car lada = new Car("Lada");
-        lada.model = "Granta";
-        lada.productionYear = 2015;
-        lada.productionCountry = "Россия";
-        lada.color = "желтый";
-        lada.engineVolume = 1.7f;
-
-        Car audi = new Car("Audi");
-        audi.model = "A8 50 L TDI quattro";
-        audi.productionYear = 2020;
-        audi.productionCountry = "Германия";
-        audi.color = "черный";
-        audi.engineVolume = 3.0f;
-
-        Car bmw = new Car("BMW");
-        bmw.model = "Z8";
-        bmw.productionYear = 2021;
-        bmw.productionCountry = "Германия";
-        bmw.color = "черный";
-        bmw.engineVolume = 3.0f;
-
-        Car kia = new Car("Kia");
-        kia.model = "Sportage 4-го поколения";
-        kia.productionYear = 2018;
-        kia.productionCountry = "Южная Корея";
-        kia.color = "красный";
-        kia.engineVolume = 2.4f;
-
-        Car hyundai  = new Car("Hyundai");
-        hyundai.model = "Avante";
-        hyundai.productionYear = 2016;
-        hyundai.productionCountry = "Южная Корея";
-        hyundai.color = "оранжевый";
-        hyundai.engineVolume = 1.6f;
+        Car lada = new Car("Lada", "Granta", 2015, "Россия", "желтый", 1.7f) ;
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 2020, "Германия", "черный", 3.0f) ;
+        Car bmw = new Car("BMW", "Z8", 2021, "Германия", "черный", 3.0f) ;
+        Car kia = new Car("Kia", "Sportage 4-го поколения", 2018, "Южная Корея", "красный", 2.4f) ;
+        Car hyundai = new Car("Hyundai", "Avante", 2016, "Южная Корея", "оранжевый", 1.6f) ;
 
         System.out.println(lada.toString());
         System.out.println(audi.toString());
         System.out.println(bmw.toString());
         System.out.println(kia.toString());
         System.out.println(hyundai.toString());
-
     }
 
     public static void task2_1() {
@@ -234,8 +208,26 @@ public class Main {
             outputMessage = outputMessage + arrFlowers[i].getTitle() + " - " + arrPieces[i] + " шт., ";
         }
 
+        bouquetCost = bouquetCost * 1.1f;
+
         System.out.println("Букет: " + outputMessage + "общая стоимость - " + bouquetCost + " руб., срок стояния - " + bouquetlifeSpan + " дней");
 
+    }
+
+    public static void task4_3() {
+        System.out.println();
+        System.out.println("Задание №4.3");
+
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 2020, "Германия", "черный", 3.0f) ;
+
+        System.out.println(audi.toString());
+
+        audi.changeTires();
+        audi.setRegistrationNumber("3345178");
+
+        audi.setRegistrationNumber("у456вр178");
+
+        System.out.println(audi.toString());
     }
 
 }
