@@ -1,6 +1,63 @@
 package transport;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 public class Car {
+
+    public static class Key {
+
+        private boolean remoteEngineStart;
+        private boolean keylessEntry;
+
+        public Key() {
+            this.remoteEngineStart = false;
+            this.keylessEntry = false;
+        }
+
+        public Key(boolean remoteEngineStart, boolean keylessEntry) {
+            this.remoteEngineStart = remoteEngineStart;
+            this.keylessEntry = keylessEntry;
+        }
+
+        public boolean isRemoteEngineStart() {
+            return remoteEngineStart;
+        }
+
+        public boolean isKeylessEntry() {
+            return keylessEntry;
+        }
+
+        @Override
+        public String toString() {
+            return "удаленный запуск - " + remoteEngineStart +
+                    ", доступ без ключа - " + keylessEntry;
+        }
+    }
+
+    public class Insurance {
+       private LocalDate validity;
+       private double Cost;
+       private String regNumber;
+
+        public Insurance(LocalDate validity, double cost, String regNumber) {
+            this.validity = validity;
+            Cost = cost;
+            this.regNumber = regNumber;
+        }
+
+        public LocalDate getValidity() {
+            return validity;
+        }
+
+        public double getCost() {
+            return Cost;
+        }
+
+        public String getRegNumber() {
+            return regNumber;
+        }
+    }
 
     private String brand;
     private String model;
@@ -13,6 +70,10 @@ public class Car {
     String registrationNumber;
     private long numberOfSeats;
     boolean summerTires;
+
+    private Key key;
+
+    private Insurance insurance;
 
     public Car(String brand) {
         this.brand = brand;
@@ -168,6 +229,46 @@ public class Car {
         return numberСorrect;
     }
 
+    boolean insuranceIsValid(Insurance insurance, boolean displayMessage) {
+        if (insurance.validity.isAfter(LocalDate.now())) {
+            return true;
+        } else {
+            if (displayMessage){
+                System.out.println("Страховка просрочена, необходимо оформить новый полис!");
+            }
+            return false;
+        }
+    }
+
+    boolean regNumberCorrect(String regNumber) {
+        if (regNumber.length() != 9) {
+            System.out.println("Номер страховки некорректный!");
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void setKey(Key key) {
+        this.key = key;
+    }
+
+    public void setInsurance(Insurance insurance) {
+        if (insuranceIsValid(insurance, true) && regNumberCorrect(insurance.regNumber)) {
+            this.insurance = insurance;
+        } else {
+            System.out.println("Страховка для " + this.getBrand() + " не записана!");
+        }
+    }
+
+    public Key getKey() {
+        return key;
+    }
+
+    public Insurance getInsurance() {
+        return insurance;
+    }
+
     @Override
     public String toString() {
         return getBrand() + " " + getModel() +
@@ -179,7 +280,7 @@ public class Car {
                 ", тип кузова - " + getBodyType() +
                 ", рег. номер - " + getRegistrationNumber() +
                 ", кол. мест - " + getNumberOfSeats() +
-                ", резина - " + getTires() + ".";
+                ", резина - " + getTires();
 
     }
 }

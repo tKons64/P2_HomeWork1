@@ -1,5 +1,7 @@
 import transport.Car;
 
+import java.time.LocalDate;
+
 public class Main {
 
     static Human[] arrHumans;
@@ -42,6 +44,7 @@ public class Main {
         //task4_2add();
 
         task4_3();
+        task4_5();
     }
 
     public static void task1_1() {
@@ -174,7 +177,6 @@ public class Main {
         Flower сhrysanthemum = new Flower("Хризантема", null , "", 15f, 5);
         Flower gypsophila = new Flower("Гипсофила", null , "Турция", 19.5f, 10);
 
-
         Flower[] arrFlowers = new Flower[3];
         long[] arrPieces = new long[3];
         arrFlowers[0] = rose;
@@ -228,6 +230,43 @@ public class Main {
         audi.setRegistrationNumber("у456вр178");
 
         System.out.println(audi.toString());
+    }
+
+    public static void task4_5() {
+        System.out.println();
+        System.out.println("ООП ч.2. Домашнее задание №3, задание №2");
+
+        Car lada = new Car("Lada", "Granta", 2015, "Россия", "черный", 1.7f);
+        Car audi = new Car("Audi", "A8 50 L TDI quattro", 2020, "Германия", "черный", 3.0f);
+        Car bmw = new Car("BMW", "Z8", 2021, "Германия", "черный", 3.0f);
+        Car kia = new Car("Kia", "Sportage 4-го поколения", 2018, "Южная Корея", "красный", 2.4f);
+        Car hyundai  = new Car("Hyundai", "Avante", 2016, "Южная Корея", "оранжевый", 1.6f);
+
+        System.out.println(lada.toString());
+
+        Car.Key standartKey = new Car.Key();
+        Car.Key remoteStart = new Car.Key(true, true);
+
+        lada.setKey(standartKey);
+        audi.setKey(remoteStart);
+        bmw.setKey(remoteStart);
+        kia.setKey(standartKey);
+        hyundai.setKey(standartKey);
+
+        System.out.println(lada.getKey().toString());
+
+        Car.Insurance ladaInsurance = lada.new Insurance(LocalDate.of(2023, 01, 31), 25000, "1325954BF");
+        lada.setInsurance(ladaInsurance);
+        Car.Insurance audiInsurance = lada.new Insurance(LocalDate.of(2023, 12, 31), 80000, "985аа5658");
+        audi.setInsurance(audiInsurance);
+        Car.Insurance bmwInsurance = lada.new Insurance(LocalDate.of(2023, 01, 31), 70000, "6546813554");
+        bmw.setInsurance(bmwInsurance);
+        Car.Insurance kiaInsurance = lada.new Insurance(LocalDate.of(2023, 06, 30), 40000, "695563545");
+        kia.setInsurance(kiaInsurance);
+        Car.Insurance hyundaiInsurance = lada.new Insurance(LocalDate.of(2024, 03, 31), 35000, "");
+        hyundai.setInsurance(hyundaiInsurance);
+
+
     }
 
 }
