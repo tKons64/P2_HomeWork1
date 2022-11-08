@@ -1,4 +1,6 @@
+import transport.Bus;
 import transport.Car;
+import transport.Train;
 
 import java.time.LocalDate;
 
@@ -43,8 +45,11 @@ public class Main {
         //task4_2();
         //task4_2add();
 
-        task4_3();
-        task4_5();
+        //task4_3();
+        //task4_5();
+
+        task5_2();
+        task5_3();
     }
 
     public static void task1_1() {
@@ -266,6 +271,69 @@ public class Main {
         Car.Insurance hyundaiInsurance = lada.new Insurance(LocalDate.of(2024, 03, 31), 35000, "");
         hyundai.setInsurance(hyundaiInsurance);
 
+
+    }
+
+    public static void task5_2() {
+        System.out.println();
+        System.out.println("ООП ч.3. Домашнее задание №1, задание №2");
+
+        Train lastochka = new Train("Ласточка",
+                "B-901",
+                2011,
+                "Россия",
+                "",
+                301,
+                3500,
+                0,
+                "Белорусский вокзал",
+                "Минск-Пассажирский",
+                11);
+
+        Train Leningrad = new Train("Ленинград",
+                "D-125",
+                2019,
+                "Россия",
+                "",
+                270,
+                1700,
+                0,
+                "Ленинградский вокзал",
+                "Ленинград-Пассажирский",
+                8);
+
+        System.out.println(lastochka.toString());
+        System.out.println(Leningrad.toString());
+    }
+
+    public static void task5_3() {
+        System.out.println();
+        System.out.println("ООП ч.3. Домашнее задание №1, задание №3");
+
+        Bus ikarus = new Bus("Ика́рус",
+                "250",
+                1980,
+                "Венгрия",
+                "красный",
+                120);
+
+        Bus liaz = new Bus("ЛиАЗ",
+                "677",
+                1979,
+                "Россия",
+                "желтый",
+                70);
+
+        Bus laz = new Bus("ЛАЗ",
+                "695",
+                1985,
+                "Украина",
+                "бело-голубой",
+                86);
+
+        System.out.println(ikarus.toString());
+        System.out.println(liaz.toString());
+        System.out.println(laz.toString());
 
     }
 

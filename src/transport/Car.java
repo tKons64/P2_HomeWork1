@@ -3,7 +3,7 @@ package transport;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Car {
+public class Car extends Transport{
 
     public static class Key {
 
@@ -59,12 +59,7 @@ public class Car {
         }
     }
 
-    private String brand;
-    private String model;
     float engineVolume;
-    String color;
-    private long productionYear;
-    private String productionCountry;
     String transmission;
     private String bodyType;
     String registrationNumber;
@@ -72,70 +67,33 @@ public class Car {
     boolean summerTires;
 
     private Key key;
-
     private Insurance insurance;
 
     public Car(String brand) {
-        this.brand = brand;
+        this(brand,
+                null,
+                0,
+                null,
+                null,
+                0);
     }
 
     public Car(String brand, String model, long productionYear, String productionCountry, String color, float engineVolume) {
-        this.brand = brand;
-        this.model = model;
-        this.productionYear = productionYear;
-        this.productionCountry = productionCountry;
-        this.setColor(color);
+        super(brand, model, productionYear, productionCountry, color, 0);
+
         this.setEngineVolume(engineVolume);
-
-        //Если передана пустая строка или null в поля модель, марка машины и страна сборки, то значение по умолчанию — default
-        if (parameterIsNotCorrect(brand)) {
-            this.brand = "default";
-        }
-        if (parameterIsNotCorrect(model)) {
-            this.model = "default";
-        }
-        if (parameterIsNotCorrect(productionCountry)) {
-            this.productionCountry = "default";
-        }
-
-        //Если год производства ≤0, то значение по умолчанию — 2000.
-        if (productionYear <= 0) {
-            this.productionYear = 2000;
-        }
-
         this.setTransmission("МКПП");
         this.bodyType = "седан";
         this.setRegistrationNumber("x000xx000");
         this.numberOfSeats = 5;
         this.summerTires = true;
-
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
     }
 
     public float getEngineVolume() {
         return engineVolume;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public long getProductionYear() {
-        return productionYear;
-    }
-
-    public String getProductionCountry() {
-        return productionCountry;
-    }
-
-    public String getTransmission() {
+     public String getTransmission() {
         return transmission;
     }
 
@@ -171,14 +129,6 @@ public class Car {
         }
     }
 
-    public void setColor(String color) {
-        if (parameterIsNotCorrect(color)) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
-
     public void setTransmission(String transmission) {
         if (transmission == null) {
             this.transmission = "МКПП";
@@ -197,10 +147,6 @@ public class Car {
 
     public void setSummerTires(boolean summerTires) {
         this.summerTires = summerTires;
-    }
-
-    boolean parameterIsNotCorrect(String parametr) {
-        return (parametr == null || parametr.isEmpty());
     }
 
     public void changeTires() {
