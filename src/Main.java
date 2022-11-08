@@ -48,8 +48,10 @@ public class Main {
         //task4_3();
         //task4_5();
 
-        task5_2();
-        task5_3();
+        task3_1_2();
+        task3_1_2();
+
+        task3_2_1();
     }
 
     public static void task1_1() {
@@ -274,7 +276,7 @@ public class Main {
 
     }
 
-    public static void task5_2() {
+    public static void task3_1_2() {
         System.out.println();
         System.out.println("ООП ч.3. Домашнее задание №1, задание №2");
 
@@ -306,7 +308,7 @@ public class Main {
         System.out.println(Leningrad.toString());
     }
 
-    public static void task5_3() {
+    public static void task3_1_3() {
         System.out.println();
         System.out.println("ООП ч.3. Домашнее задание №1, задание №3");
 
@@ -334,7 +336,41 @@ public class Main {
         System.out.println(ikarus.toString());
         System.out.println(liaz.toString());
         System.out.println(laz.toString());
-
     }
 
+    public static void task3_2_1() {
+        System.out.println();
+        System.out.println("ООП ч.3. Домашнее задание №2, задание №1");
+
+        Car lada = new Car("Lada",
+                "Granta",
+                2015,
+                "Россия",
+                "черный",
+                1.7f);
+
+        Train lastochka = new Train("Ласточка",
+                "B-901",
+                2011,
+                "Россия",
+                "",
+                301,
+                3500,
+                0,
+                "Белорусский вокзал",
+                "Минск-Пассажирский",
+                11);
+
+        Bus ikarus = new Bus("Ика́рус",
+                "250",
+                1980,
+                "Венгрия",
+                "красный",
+                120);
+
+        lada.refill();
+        lastochka.refill();
+        ikarus.refill();
+
+    }
 }

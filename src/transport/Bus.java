@@ -7,6 +7,11 @@ public class Bus extends Transport{
     }
 
     @Override
+    public void refill() {
+        System.out.println("Бензин, или дизель на заправке");
+    }
+
+    @Override
     public String toString() {
         return "Автобус - " + this.getBrand() +
                 ", модель " + this.getModel() +

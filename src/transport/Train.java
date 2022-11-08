@@ -18,6 +18,11 @@ public class Train extends Transport{
     }
 
     @Override
+    public void refill() {
+        System.out.println("Заправлять только дизелем");
+    }
+
+    @Override
     public String toString() {
         return "Поезд - " + this.getBrand() +
                 ", модель " + this.getModel() +

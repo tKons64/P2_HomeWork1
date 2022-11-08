@@ -1,6 +1,6 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
 
     private String brand;
     private String model;
@@ -25,6 +25,8 @@ public class Transport {
         this.setColor(color);
         this.setMaxSpeed(maxSpeed);
     }
+
+    public abstract void refill();
 
     boolean parameterIsNotCorrect(String parametr) {
         return (parametr == null || parametr.isEmpty());

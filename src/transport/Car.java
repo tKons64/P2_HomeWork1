@@ -89,6 +89,11 @@ public class Car extends Transport{
         this.summerTires = true;
     }
 
+    @Override
+    public void refill() {
+        System.out.println("Бензин, дизель на заправке или заряжать на специальных электропарковках, если это электрокар");
+    }
+
     public float getEngineVolume() {
         return engineVolume;
     }
