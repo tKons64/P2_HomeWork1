@@ -4,7 +4,7 @@ import AnimalWorld.Animal;
 
 import java.util.Objects;
 
-public class Bird extends Animal{
+public abstract class Bird extends Animal{
 
     private String habitat;
 

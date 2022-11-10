@@ -3,7 +3,7 @@ package AnimalWorld;
 import javax.swing.*;
 import java.util.Objects;
 
-public class Animal {
+public abstract class Animal {
 
     private String name;
     private int age;
